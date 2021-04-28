@@ -13,9 +13,12 @@ import createConnection from '@shared/infra/typeorm';
 import swaggerFile from '../../../swagger.json';
 
 import '@shared/container';
+import rateLimiterMiddleware from './middlewares/rateLimiter';
 
 createConnection();
 const app = express();
+
+app.use(rateLimiterMiddleware);
 
 app.use(express.json());
 
