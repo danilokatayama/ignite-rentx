@@ -5,7 +5,7 @@ import { User } from '../../../../modules/accounts/infra/typeorm/entities/User';
 import createConnection from '../index';
 
 async function create() {
-  const connection = await createConnection('localhost');
+  const connection = await createConnection();
 
   const adminUser = new User();
   const id = uuidV4();
